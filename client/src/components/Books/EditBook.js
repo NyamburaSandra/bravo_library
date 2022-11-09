@@ -31,7 +31,7 @@ const EditBook = (props) => {
             </div><br></br>
             <div className="form-group">
             <label htmlFor="">Author ID</label>
-            <input type="text" className="form-control" name="author_id" placeholder="Author ID" value={book.author_id} onChange={handleInput} />
+            <input type="number" className="form-control" name="author_id" placeholder="Author ID" value={book.author_id} onChange={handleInput} />
             </div><br></br>
             <div className="form-group">
             <label htmlFor="">Year Of Publication</label>
@@ -40,6 +40,14 @@ const EditBook = (props) => {
             <div className="form-group">
             <label htmlFor="">ISBN</label>
             <input type="number" className="form-control" name="isbn" placeholder="isbn" value={book.isbn} onChange={handleInput} />
+            </div><br></br>
+            <div className="form-group">
+            <label htmlFor="">Price</label>
+            <input type="number" className="form-control" name="price" placeholder="price" value={book.price} onChange={handleInput} />
+            </div><br></br>
+            <div className="form-group">
+            <label htmlFor="">Image_url</label>
+            <input type="text" className="form-control" name="image_url" placeholder="Image_url" value={book.image_url} onChange={handleInput}/>
             </div><br></br>
             <button className="btn btn-primary mr-4">Submit</button>
             <button 

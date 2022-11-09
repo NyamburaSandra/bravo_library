@@ -27,7 +27,7 @@ function Books() {
   // EDIT A BOOK
   const editBook = book => {
     setEdit(true)
-    setCurrentBook({ id:book.id, title:book.title, author_id:book.author_id, year:book.year, isbn:book.isbn})
+    setCurrentBook({ id:book.id, title:book.title, author_id:book.author_id, year:book.year, isbn:book.isbn, price:book.price, image_url:book.image_url})
   }
   // UPDATE A BOOK
   const updateBook = (id, updatedBook) => {

@@ -6,13 +6,13 @@ const BookView = (props) => {
         <table className="table">
             <thead>
                 <tr>
-                <th className="text-primary">Book Id</th>
+                <th className="text-primary"> </th>
                 {/* <th className="text-primary">Title</th> */}
                 <th className="text-primary">Author Id</th>
                 <th className="text-primary">Year</th>
                 <th className="text-primary">ISBN</th>
-                <th className="text-primary">price</th>
-                <th className="text-primary">stock</th>
+                <th className="text-primary">Price</th>
+                <th className="text-primary">Stock</th>
                 <th className="text-primary">Edit</th>
                 <th className="text-primary">Delete</th>
                 </tr>
@@ -21,7 +21,7 @@ const BookView = (props) => {
                 {props.books.length > 0 ? (
                     props.books.map(book => (
                         <tr key={book.id}>
-                            <td>{book.id}</td>
+                            <td><img src={book.image_url} alt={book.title} height="50" /></td>
                             {/* <td>{book.title}</td> */}
                             <td>{book.author_id}</td>
                             <td>{book.year}</td>
