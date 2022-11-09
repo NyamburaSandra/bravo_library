@@ -8,7 +8,7 @@ function Home() {
         <h1 className="display-5 fw-bold">Bravo Library</h1>
         <p className="col-md-8 fs-4"></p>
         <button className="btn btn-primary btn-lg" type="button">
-          <NavLink to={'/'}>View Books</NavLink>
+          <NavLink to={'/mylibrary'}>My Library</NavLink>
         </button>
       </div>
     </div>
