@@ -6,7 +6,7 @@ import EditBook from './EditBook';
 
 function Books() {
 
-  const formState = {id:null, name:'', author:'', year:'',isbn:''}
+  const formState = {id:null, title:'', author_id:'', year:'',isbn:''}
   const [books, setBooks] = useState([]);
   const [edit, setEdit] = useState(false);
   const [currentBook, setCurrentBook] = useState(formState);
@@ -27,7 +27,7 @@ function Books() {
   // EDIT A BOOK
   const editBook = book => {
     setEdit(true)
-    setCurrentBook({ id:book.id, name:book.name, author:book.author, year:book.year, isbn:book.isbn})
+    setCurrentBook({ id:book.id, title:book.title, author_id:book.author_id, year:book.year, isbn:book.isbn})
   }
   // UPDATE A BOOK
   const updateBook = (id, updatedBook) => {

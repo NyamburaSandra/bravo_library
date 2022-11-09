@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from './components/Navbar';
-// import AboutUs from './components/AboutUs';
+import AboutUs from './components/AboutUs';
 import Home from './components/Home';
 import './App.css';
 import Authors from './components/Authors/Authors';
@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/books" element={<Books />} />
         {/* <Route exact path="/mylibrary" element={<MyLibrary />} /> */}
       </Routes>
-      {/* <AboutUs /> */}
+      <AboutUs />
     </BrowserRouter>
   );
 };

@@ -6,7 +6,7 @@ import EditAuthor from "./EditAuthor";
 
 function Authors() {
 
-    const formState = {id:null, name:'', author:'', year:'',isbn:''}
+    const formState = {id:null, first_name:'', last_name:'', image_url:'',genre:''}
     const [authors, setAuthors] = useState([])
     const [edit, setEdit] = useState(false);
     const [currentAuthor, setCurrentAuthor] = useState(formState);
@@ -27,7 +27,7 @@ function Authors() {
     // EDIT An Author
     const editAuthor = author => {
         setEdit(true)
-        setCurrentAuthor({ id:author.id, name:author.name, author:author.author, year:author.year, isbn:author.isbn})
+        setCurrentAuthor({ id:author.id, first_name:author.first_name, last_name:author.last_name, image_url:author.image_url, genre:author.genre})
     }
     // UPDATE An Author
     const updateAuthor = (id, updatedAuthor) => {

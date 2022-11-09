@@ -19,7 +19,7 @@ function AuthorView(props) {
                 {props.authors.length > 0 ? (
                     props.authors.map(author => (
                         <tr key={author.id}>
-                            <td><img src={author.image_url} alt={author.first_name} /></td>
+                            <td><img src={author.image_url} alt={author.first_name} height="50" /></td>
                             <td>{author.first_name}</td>
                             <td>{author.last_name}</td>
                             <td>{author.id}</td>
@@ -28,7 +28,7 @@ function AuthorView(props) {
                                 <button 
                                     className="btn btn-sm btn-primary"
                                     onClick={() => {
-                                        props.editauthor(author)
+                                        props.editAuthor(author)
                                     }}
                                 >
                                     Edit

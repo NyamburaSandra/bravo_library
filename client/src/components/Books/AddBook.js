@@ -5,8 +5,8 @@ const Addbook = (props) => {
     // setting inital states for Component
     const formState = {
          id:null, 
-         name:'', 
-         author:'', 
+         title:'', 
+         author_id:'', 
          year:'',
          isbn:''
         }
@@ -21,7 +21,7 @@ const Addbook = (props) => {
     // handle book form on submission
     const submitBook = (e) => {
         e.preventDefault();
-        if(!book.name || !book.author || !book.year || !book.isbn) return
+        if(!book.title || !book.author_id || !book.year || !book.isbn) return
         props.addBook(book)
         setBook(formState)
     }
@@ -29,12 +29,12 @@ const Addbook = (props) => {
     return(
         <form onSubmit={submitBook} className="text-light font-weight-bold">
             <div className="form-group">
-            <label htmlFor="">Name</label>
-            <input type="text" className="form-control" name="name" placeholder="Book name" value={book.name} onChange={handleInput}/>
+            <label htmlFor="">Title</label>
+            <input type="text" className="form-control" name="title" placeholder="Book title" value={book.title} onChange={handleInput}/>
             </div><br></br>
             <div className="form-group">
-            <label htmlFor="">Author</label>
-            <input type="text" className="form-control" name="author" placeholder="Author" value={book.author} onChange={handleInput} />
+            <label htmlFor="">Author ID</label>
+            <input type="text" className="form-control" name="author" placeholder="Author ID" value={book.author_id} onChange={handleInput} />
             </div><br></br>
             <div className="form-group">
             <label htmlFor="">Year Of Publication</label>
