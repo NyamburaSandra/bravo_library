@@ -26,19 +26,19 @@ const EditBook = (props) => {
     return(
         <form onSubmit={submitEditForm} className="text-light font-weight-bold">
             <div className="form-group">
-            <label for="">Name</label>
+            <label htmlFor="">Name</label>
             <input type="text" className="form-control" name="name" placeholder="Book name" value={book.name} onChange={handleInput}/>
             </div><br></br>
             <div className="form-group">
-            <label for="">Author</label>
+            <label htmlFor="">Author</label>
             <input type="text" className="form-control" name="author" placeholder="Author" value={book.author} onChange={handleInput} />
             </div><br></br>
             <div className="form-group">
-            <label for="">Year Of Publication</label>
+            <label htmlFor="">Year Of Publication</label>
             <input type="text" className="form-control" name="year" placeholder="Year" value={book.year} onChange={handleInput} />
             </div><br></br>
             <div className="form-group">
-            <label for="">ISBN</label>
+            <label htmlFor="">ISBN</label>
             <input type="number" className="form-control" name="isbn" placeholder="isbn" value={book.isbn} onChange={handleInput} />
             </div><br></br>
             <button className="btn btn-primary mr-4">Submit</button>

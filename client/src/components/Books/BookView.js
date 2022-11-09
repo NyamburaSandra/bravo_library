@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Books = (props) => {
+const BookView = (props) => {
     return(
         <div className="table-responsive-sm">
         <table className="table">
@@ -61,4 +61,4 @@ const Books = (props) => {
     )
 }
 
-export default Books;
+export default BookView;

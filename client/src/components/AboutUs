@@ -1,0 +1,28 @@
+import React from "react";
+// import styled from "styled-components";
+
+// const Div = styled.div`
+//     background-color: black;
+//     color: green;
+//     display: flex;
+//     justify-content: space-between;
+// `
+// const div = styled.div`
+// `
+
+function AboutUs() {
+    return(
+        <div>
+            <div>
+                <h2>About Us</h2>
+                <p>The Morans Morale is meant<br/> to celebrate our country's<br/> basketball team</p>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>+254 796 297 788</p>
+            </div>
+        </div>
+    )
+}
+
+export default AboutUs;

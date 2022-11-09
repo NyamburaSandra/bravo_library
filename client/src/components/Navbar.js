@@ -16,10 +16,10 @@ function Navbar(props) {
               <a className="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/"></a>
+              <a className="nav-link" href="/authors">Authors</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/"></a>
+              <a className="nav-link" href="/books">Books</a>
             </li>
           </ul>
         </div>
@@ -28,4 +28,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+// export default Navbar;
