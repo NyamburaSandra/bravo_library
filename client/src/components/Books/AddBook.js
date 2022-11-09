@@ -10,7 +10,8 @@ const Addbook = (props) => {
          year:'',
          isbn:'',
          price:'',
-         image_url:''
+         image_url:'',
+         stock:''
         }
     const [book, setBook] = useState(formState);
 
@@ -23,9 +24,17 @@ const Addbook = (props) => {
     // handle book form on submission
     const submitBook = (e) => {
         e.preventDefault();
-        if(!book.title || !book.author_id || !book.year || !book.isbn || !book.price || !book.image_url) return
+        if(!book.title || !book.author_id || !book.year || !book.isbn || !book.price || !book.image_url || !book.stock) return
         props.addBook(book)
         setBook(formState)
+        
+        fetch("http://localhost:9292/books", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(book),
+        }).then(res => res.json()).then(console.log)
     }
 
     return(
@@ -53,6 +62,10 @@ const Addbook = (props) => {
             <div className="form-group">
             <label htmlFor="">Image_url</label>
             <input type="text" className="form-control" name="image_url" placeholder="Image_url" value={book.image_url} onChange={handleInput}/>
+            </div><br></br>
+            <div className="form-group">
+            <label htmlFor="">Stock</label>
+            <input type="number" className="form-control" name="stock" placeholder="stock" value={book.stock} onChange={handleInput} />
             </div><br></br>
             
             <button type="submit" className="btn btn-primary">Add Book</button>

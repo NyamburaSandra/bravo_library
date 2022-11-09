@@ -20,6 +20,14 @@ const EditAuthor = (props) => {
     const submitEditForm = (e) => {
         e.preventDefault();
         props.updateAuthor(author.id, author)
+        
+        fetch(`http://localhost:9292/authors/${author.id}`, {
+            method: "PATCH",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(author),
+        }).then(res => res.json()).then(console.log)
     }
 
 

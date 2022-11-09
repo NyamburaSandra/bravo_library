@@ -20,6 +20,14 @@ const EditBook = (props) => {
     const submitEditForm = (e) => {
         e.preventDefault();
         props.updateBook(book.id, book)
+        
+        fetch(`http://localhost:9292/books/${book.id}`, {
+            method: "PATCH",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(book),
+        }).then(res => res.json()).then(console.log)
     }
 
 
@@ -48,6 +56,10 @@ const EditBook = (props) => {
             <div className="form-group">
             <label htmlFor="">Image_url</label>
             <input type="text" className="form-control" name="image_url" placeholder="Image_url" value={book.image_url} onChange={handleInput}/>
+            </div><br></br>
+            <div className="form-group">
+            <label htmlFor="">Stock</label>
+            <input type="number" className="form-control" name="stock" placeholder="stock" value={book.stock} onChange={handleInput} />
             </div><br></br>
             <button className="btn btn-primary mr-4">Submit</button>
             <button 

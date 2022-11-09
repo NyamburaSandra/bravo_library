@@ -58,6 +58,7 @@ class ApplicationController < Sinatra::Base
   patch '/books/:id' do
     book = Book.find(params[:id])
     book.update(
+      author_id: params[:author_id].to_s.split("").size > 0 ? params[:author_id] : book[:author_id],
       price: params[:price].to_s.split("").size-1 > 2 ? params[:price] : book[:price],
       stock: params[:stock].to_s.split("").size >= 0 ? params[:stock] : book[:stock],
       image_url: params[:image_url].length > 10 ? params[:image_url] : book[:image_url]

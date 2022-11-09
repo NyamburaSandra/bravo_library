@@ -6,7 +6,7 @@ import EditBook from './EditBook';
 
 function Books() {
 
-  const formState = {id:null, title:'', author_id:'', year:'',isbn:''}
+  const formState = {id:null, title:'', author_id:'', year:'',isbn:'', price:'', image_url:'', stock:''}
   const [books, setBooks] = useState([]);
   const [edit, setEdit] = useState(false);
   const [currentBook, setCurrentBook] = useState(formState);
@@ -27,7 +27,7 @@ function Books() {
   // EDIT A BOOK
   const editBook = book => {
     setEdit(true)
-    setCurrentBook({ id:book.id, title:book.title, author_id:book.author_id, year:book.year, isbn:book.isbn, price:book.price, image_url:book.image_url})
+    setCurrentBook({ id:book.id, title:book.title, author_id:book.author_id, year:book.year, isbn:book.isbn, price:book.price, image_url:book.image_url, stock:book.stock})
   }
   // UPDATE A BOOK
   const updateBook = (id, updatedBook) => {
@@ -38,6 +38,10 @@ function Books() {
   const deleteBook = id => {
     setEdit(false);
     setBooks(books.filter(book => book.id !== id))
+
+    fetch(`http://localhost:9292/books/${id}`, {
+      method: "DELETE"
+    })
   }
 
 
@@ -45,7 +49,7 @@ function Books() {
   return (
     <div className="container">
       <div className="header">
-        <h1>LIBRARY</h1>
+        <h1>BRAVO BOOKS</h1>
         <br/>
         <br/>
       </div>

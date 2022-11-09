@@ -24,6 +24,14 @@ const AddAuthor = (props) => {
         if(!author.first_name || !author.last_name || !author.image_url || !author.genre) return
         props.addAuthor(author)
         setAuthor(formState)
+        
+        fetch("http://localhost:9292/authors", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(author),
+        }).then(res => res.json()).then(console.log)
     }
 
     return(

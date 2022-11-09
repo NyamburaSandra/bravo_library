@@ -38,6 +38,10 @@ function Authors() {
     const deleteAuthor = id => {
         setEdit(false);
         setAuthors(authors.filter(author => author.id !== id))
+
+        fetch(`http://localhost:9292/authors/${id}`, {
+          method: "DELETE"
+        })
     }
 
     return (
